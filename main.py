@@ -1,7 +1,6 @@
-import os
 import json
-from bot import Bot
-from app import main_app, perm_val_set
+from bot_brain import Brain
+from interface import main_app, perm_val_set
 
 switch_on = False
 my_list = ["", "null", None]
@@ -37,7 +36,7 @@ try:
     BASE_ACCOUNT = values[1][0]
     FOLLOW_UNFOLLOW = int(values[1][1])
 
-    github_bot = Bot(CHROME_DRIVER_PATH)
+    github_bot = Brain(CHROME_DRIVER_PATH)
     github_bot.login(USERNAME, PASSWORD)
     switch_on = True
 
@@ -48,14 +47,5 @@ except ValueError or TypeError:
 # final part
 finally:
     if switch_on:
-        if FOLLOW_UNFOLLOW == 0:
-            github_bot.follow(BASE_ACCOUNT, 0.1)
-
-        elif FOLLOW_UNFOLLOW == 1:
-            github_bot.unfollow(USERNAME, 0)
-
-        else:
-            print("Invalid input.")
-
-
+        github_bot.bot_engine(0.1, FOLLOW_UNFOLLOW, BASE_ACCOUNT, USERNAME)
 

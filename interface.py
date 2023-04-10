@@ -26,7 +26,7 @@ def perm_val_set():
             [psg.Text('Password', size=(15, 1)), psg.Input(expand_x=True)],
             [psg.OK(), psg.Cancel()]
         ]
-        window = psg.Window('perma var set', layout)
+        window = psg.Window('perma vaL set', layout)
         event, values = window.read()
         window.close()
         return event, values
