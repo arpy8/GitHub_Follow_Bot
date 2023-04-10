@@ -5,7 +5,7 @@ This is a simple Python script that uses the Selenium library to automate follow
 ## Description
 
 A GitHub Follow Bot made using Selenium application. After receving the necessary information from the user, the bot itself runs. 
-It is designed to work with the Google Chrome browser.
+It is designed to work with the Google Chrome browser. This bot is capable of both following new people and also decreasing your own followers.
 
 ## Installation
 
