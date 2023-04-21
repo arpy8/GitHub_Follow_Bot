@@ -33,8 +33,8 @@ else:
 # fetching base username from user
 try:
     values = main_app()
-    BASE_ACCOUNT = values[1][0]
-    FOLLOW_UNFOLLOW = int(values[1][1])
+    BASE_ACCOUNT = values[0]
+    FOLLOW_UNFOLLOW = int(values[1])
 
     github_bot = Brain(CHROME_DRIVER_PATH)
     github_bot.login(USERNAME, PASSWORD)
